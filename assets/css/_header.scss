@@ -1,6 +1,6 @@
-header {
+.header {
+	background-color: $Dark-Jungle-Green;
 	.header__top {
-		background-color: $Dark-Jungle-Green;
 		&__logo {
 			width: 90px;
 			height: 56px;
@@ -112,6 +112,68 @@ header {
 				}
 				&:focus {
 					outline: none;
+				}
+			}
+		}
+	}
+
+	&__body {
+		padding: 20px 0;
+		&__wrapper {
+			display: grid;
+			grid-template-areas:
+				'first first second  third'
+				'first  first second fourth';
+
+			gap: 20px;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+		&__element {
+			position: relative;
+         .header__body__element__title {
+               position: absolute;
+               top: 16px;
+               left: 16px;
+					@include texts(20px, 400, $Prosto-One-Family, $white, 24px, normal);
+				}
+			&:first-child {
+				grid-area: first;
+				position: relative;
+				.header__body__element__title {
+               position: absolute;
+               top: 15px;
+               left: 15px;
+               width: 100%;
+					@include texts(40px, 400, $Prosto-One-Family, $white, 48px, normal);
+				}
+			}
+			&:nth-child(2) {
+				grid-area: second;
+			}
+			&:nth-child(3) {
+				grid-area: third;
+			}
+			&:nth-child(4) {
+				grid-area: fourth;
+			}
+			&__link {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: $black;
+				width: 58px;
+				height: 58px;
+				flex-shrink: 0;
+				@include flex-centered;
+				cursor: pointer;
+				transition: 0.4s;
+				padding: 10px;
+				a {
+					display: block;
+				}
+				&:hover {
+					background-color: $International-Orange;
 				}
 			}
 		}
