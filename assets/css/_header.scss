@@ -1,0 +1,119 @@
+header {
+	.header__top {
+		background-color: $Dark-Jungle-Green;
+		&__logo {
+			width: 90px;
+			height: 56px;
+			flex-shrink: 0;
+		}
+		&__wrapper {
+			@include flex-between;
+		}
+		&__center {
+			&__date {
+				@include texts(16px, 500, $raleway, $white, 20px, normal);
+				@include flex-gap(10px);
+			}
+		}
+		&__right {
+			@include flex-gap(68px);
+			&__number {
+				span {
+					display: block;
+					@include texts(18px, 600, $raleway, $white, 20px, normal);
+				}
+				a {
+					display: block;
+					@include texts(14px, 500, $raleway, $Portland-Orange, 16px, normal);
+					text-decoration: underline;
+					margin-top: 5px;
+				}
+			}
+			&__links {
+				@include flex-gap(18px);
+				ul {
+					@include flex;
+					li {
+						width: 96px;
+						height: 96px;
+						flex-shrink: 0;
+						background-color: $Iridium;
+						@include flex-centered;
+						transition: 0.4s;
+						cursor: pointer;
+						&:hover {
+							background-color: $International-Orange;
+						}
+					}
+				}
+				.all {
+					div {
+						&:first-child {
+							@include texts(16px, 500, $raleway, $white, 20px, normal);
+						}
+						&:last-child {
+							@include texts(16px, 700, $raleway, $white, 20px, normal);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.navbar {
+		padding: 20px 0;
+		background-color: $black;
+		&__catalog__hamburger {
+			border-radius: 5px;
+			cursor: pointer;
+			border: 1px solid $International-Orange;
+			width: max-content;
+			@include flex-centered;
+			@include flex-gap(15px);
+			width: 200px;
+			height: 48px;
+			@include texts(16px, 700, $raleway, $white, 20px, normal);
+		}
+		&__wrapper {
+			@include flex-between;
+		}
+		&__links {
+			@include flex-gap(32px);
+			ul {
+				&:first-child {
+					@include flex-gap(60px);
+					a {
+						@include texts(16px, 500, $raleway, $white, 20px, normal);
+					}
+				}
+				&:last-child {
+					@include flex-gap(10px);
+				}
+			}
+		}
+		&__input {
+			max-width: 310px;
+			height: 52px;
+			width: 100%;
+			position: relative;
+			flex-shrink: 0;
+			.icon {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 21px;
+			}
+			input {
+				border-radius: 5px;
+				border: none;
+				padding-left: 57px;
+				&::placeholder {
+					@include texts(16px, 500, $raleway, $Oslo-Grey, 20px, normal);
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+}
